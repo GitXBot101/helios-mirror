@@ -1,9 +1,15 @@
 version: "3.3"
 
 services:
-  app:
-    build: .
-    command: bash start.sh
-    restart: on-failure
-    ports:
-      - "80:80"
+  app:
+    build: .
+    command: bash start.sh
+    restart: on-failure
+    ports:
+      - "50:50"
+      - "5744:5744"
+
+networks:
+  default:
+    external: true
+    name: network1
